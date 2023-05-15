@@ -16,8 +16,11 @@ public class  ContribuinteApp {
             System.out.printf("\nPessoa nome: %s, Imposto = R$%.2f \n", pessoa.getName(), pessoa.calcularImposto());
             impostoTotal += pessoa.calcularImposto();
         }
-
-        System.out.printf("\nO imposto total dos contribuintes será de R$%.2f \n\n", impostoTotal);
+        if (impostoTotal == 0) {
+            System.out.println("Não há contribuintes registrados.");
+        } else {
+            System.out.printf("\nO imposto total dos contribuintes será de R$%.2f \n\n", impostoTotal);
+        }
 
     }
     public static List<Contribuinte> lerDadosContribuintes () {
@@ -44,10 +47,9 @@ public class  ContribuinteApp {
                 System.out.println("Informe a renda anual: ");
                 double rendaPessoa = scan.nextDouble();
 
-                double gastosSaude;
                 if (tipoPessoa.equals("F")) {
                     System.out.println("Por favor, informe os gastos de Saúde: ");
-                    gastosSaude = scan.nextDouble();
+                    double gastosSaude = scan.nextDouble();
 
                     contribuintes.add(new PessoaFisica(nomePessoa, rendaPessoa, gastosSaude));
 
