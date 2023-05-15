@@ -17,7 +17,7 @@ public class  ContribuinteApp {
             impostoTotal += pessoa.calcularImposto();
         }
         if (impostoTotal == 0) {
-            System.out.println("Não há contribuintes registrados.");
+            System.out.println("Nenhum imposto registrado.");
         } else {
             System.out.printf("\nO imposto total dos contribuintes será de R$%.2f \n\n", impostoTotal);
         }
